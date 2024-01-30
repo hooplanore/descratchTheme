@@ -1,0 +1,298 @@
+/*
+Theme Name: plane
+Author: JAZY branding
+*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&family=Zen+Kaku+Gothic+New:wght@300&display=swap');
+
+@charset "UTF-8";
+/*初期設定
+----------------------------------------------------*/
+/* body */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+	background-color: #EEF0E5;
+	color:#163020;
+	font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+.wrapper {
+	padding: 0px;
+	width: 100%;
+	margin: 0px auto;
+}
+
+section{
+	margin: 0 auto;
+}
+section p{
+	margin: -5px 0 5px;
+}
+.inner{
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+header {
+	margin: 0;
+	padding: 0;
+	height: 50px;
+	background-color: #163020;
+	width: 100%;
+	position: fixed;
+	z-index: 100;
+	top:0;
+}
+
+.side-content{
+	background-color: #304D30;
+  position: fixed;
+  top:50px;
+  left: 0px;
+  width: 150px;
+  color:#fff;
+  height: 100%;
+}
+
+@media(max-width: 680px) {
+  .side-content{
+		display: none;
+	}
+  .content{
+    margin: 100px 0 0 0 !important;
+  }
+}
+
+.side-title{
+  padding: 10px;
+}
+
+.side-content ul{
+  margin-top: 10px;
+}
+
+.styled {
+  border: 0;
+  width: 100%;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: left;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  background-color: #304D30;
+  transition: background-color 0.5s ease;
+}
+
+.styled:hover {
+  background-color: #163020;
+}
+
+.content{
+  margin: 100px 0 0 150px;
+}
+
+.block{
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: #B6C4B6;
+}
+
+.ath-block {
+  margin: 20px;
+  display: flex;
+  justify-content:space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.ath-list{
+  width: 32%;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #B6C4B6;
+  margin-bottom: 20px;
+}
+
+.ath{
+  transition: background-color 0.5s ease;
+}
+
+@media(max-width: 480px) {
+  .ath-list{
+    width: 49%;
+  }
+}
+
+.ath-block img{
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-top: 20px;
+}
+
+.ath-list-link {
+  display: inline-block; /* リンクをブロック要素に変更して、widthやheightなどのスタイルが適用されるようにする */
+  text-decoration: none; /* リンクの下線を削除 */
+  color: inherit; /* リンクの色を親要素の色に合わせる */
+  width: 100%;
+}
+
+.ath-list-link:hover .ath {
+  /* ホバー時のスタイルを指定します */
+  color: #ff0000; /* ホバー時のテキストの色を赤に変更 */
+  background-color: #e0e0e0; 
+  border-radius: 10px;
+}
+
+.logo{
+    position: fixed;
+    top: 12px;
+    left: 20px;
+}
+.logo img{
+	width: 100px;
+}
+
+
+/* menu */
+.menu-btn {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    height: 50px;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: #163020;
+    ;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 20px;
+    border-radius: 2px;
+    background-color: #efefec;
+    position: absolute;
+    bottom:30px;
+}
+.menu-btn{
+  font-size: 12px;
+    color: #efefec; 
+}
+
+.menu-btn span:before {
+    bottom: 6px;
+}
+.menu-btn span:after {
+    top: 6px;
+}
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+#menu-btn-check {
+    display: none;
+}
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;/*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color: #304D30;
+    transition: all 0.5s;/*アニメーション設定*/
+}
+#menu-btn-check:checked ~ .menu-content {
+    left: 50%;/*メニューを画面内へ*/
+}
+
+.menu-content ul{
+    margin: 10% auto;
+    }
+
+.menu-content li{
+	list-style: none;
+	text-align: center;
+	margin: 10px;
+}
+
+.menu-content li a{
+	color: #fff;
+	text-decoration: none;
+  font-size: clamp(16px, 4vw, 24px);
+}
+.menu-logo{
+margin: 0 auto;
+text-align: center;
+}
+.menu-logo img{
+	text-align: center;
+	width: 150px;
+}
+
+footer{
+	width: 100%;
+	margin-top: 150px;
+	padding: 5px;
+  text-align: center;
+	background-color: #163020;
+	color: #efefec;
+	max-width: 100%;
+  position: fixed;
+  bottom:0px;
+}
+
+
+
+/*投稿ページ用css*/
+.s-content{
+  margin: 50px 0 0 150px;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(0, 92, 19, 1));
+  height: 100px;
+  position: relative;
+}
+
+.s-thum {
+  padding: 20px 40px;
+}
+
+.s-thum img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.pagetitle {
+  position: absolute;
+  display: inline-block;
+  margin-bottom: 1em;
+  font-size: clamp(32px, 4vw, 60px);
+  font-family: 'Noto Sans', sans-serif;
+  top: 30px;
+  left: 210px;
+}
